@@ -44,8 +44,8 @@ public class CommentTest
     public void testConstructor()
     {
         Comment comment1 = new Comment("Bill", "Not bad", 3);
-        assertNotNull(comment1.getAuthor());
-        assertNotNull(comment1.getComment());
+        assertEquals("Bill", comment1.getAuthor());
+        assertEquals("Not bad", comment1.getComment());
         assertEquals(3, comment1.getRating());
         assertEquals(0, comment1.getVoteCount());
     }

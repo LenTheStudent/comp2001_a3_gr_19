@@ -45,7 +45,7 @@ public class SalesItemTest
     {
         SalesItem salesIte1 = new SalesItem("Bike", 100);
         assertEquals(100, salesIte1.getPrice());
-        assertNotNull(salesIte1.getName());
+        assertEquals("Bike", salesIte1.getName());
         assertEquals(0, salesIte1.getNumberOfComments());
     }
 }
