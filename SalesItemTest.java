@@ -13,6 +13,7 @@ import org.junit.Test;
  */
 public class SalesItemTest
 {
+    private SalesItem salesIte1;
     /**
      * Default constructor for test class SalesItemTest
      */
@@ -28,6 +29,7 @@ public class SalesItemTest
     @Before
     public void setUp()
     {
+        salesIte1 = new SalesItem("laptop", 1000);
     }
 
     /**
@@ -39,6 +41,50 @@ public class SalesItemTest
     public void tearDown()
     {
     }
+    
+    @Test
+    public void testValidRating()
+    {
+        assertEquals(true, salesIte1.addComment("Adam", "good laptop", 4));
+    }
+
+    @Test
+    public void testInvalidRating()
+    {
+        assertEquals(false, salesIte1.addComment("Adam", "laptop good", 7));
+    }
+
+    @Test
+    public void testDuplicateAuthor()
+    {
+        salesIte1.addComment("Adam", "laptop good", 4);
+        assertEquals(false, salesIte1.addComment("Adam", "amazing laptop", 5));
+    }
+
+    @Test
+    public void testRemoveComment()
+    {
+        salesIte1.addComment("Adam", "laptop good", 4);
+        salesIte1.removeComment(0);
+        assertEquals(0, salesIte1.getNumberOfComments());
+    }
+
+    @Test
+    public void testUpvoteComment()
+    {
+        salesIte1.addComment("Adam", "laptop good", 4);
+        salesIte1.upvoteComment(0);
+        assertEquals(1, salesIte1.getVotes(0));
+    }
+
+    @Test
+    public void testDownvoteComment()
+    {
+        salesIte1.addComment("Adam", "laptop good", 4);
+        salesIte1.downvoteComment(0);
+        assertEquals(-1, salesIte1.getVotes(0));
+    }
+}
 
     @Test
     public void testConstructor()
