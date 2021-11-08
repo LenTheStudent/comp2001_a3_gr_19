@@ -9,3 +9,10 @@ The current project is concerned only with customer comments for sales items. It
 code to create, store, show and manipulate customer comments.
 
 NOTE: There are several serious errors to be found in these classes.
+
+Len created the repository.
+
+Point distribution:
+Len: 10
+Corey: 10
+Adam: 10
