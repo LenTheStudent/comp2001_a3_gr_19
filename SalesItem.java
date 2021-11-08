@@ -53,6 +53,14 @@ public class SalesItem
     }
     
     /**
+     * Return the vote count of the comment provided by the given index.
+     */
+    public int getVotes(int index)
+    {
+        return comments.get(index).getVoteCount();
+    }
+    
+    /**
      * Add a comment to the comment list of this sales item. Return true if successful;
      * false if the comment was rejected.
      * 
